@@ -17,11 +17,11 @@ const CalculatorBox = () => {
         setFlag('false');
 
         if (isNaN(num1) || isNaN(num2)) {
-            setResult('Plz Enter The number')
+            setResult('Plz Enter The Number Only...')
             setFlag('Error!');
             setRedGreen('red')
             return
-        }s
+        }
 
         if (!num1) {
             setResult('Num1 Connot be Empty')
@@ -88,7 +88,11 @@ const CalculatorBox = () => {
 
             {flag && <h3 style={{ color: redGreen }}> {flag}</h3>}
 
-            {result && <h2>Result : {result}</h2>}
+            {result == 0 && <h2>Result : {result}</h2>}
+            
+            {result != 0 ? result && <h2>Result : {result}</h2> :'' }
+           
+
         </div>
     )
 }
